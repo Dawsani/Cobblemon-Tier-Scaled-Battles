@@ -1,5 +1,5 @@
 # Cobblemon: Tier-Scaled Battles
-This is an addon mod for Cobblemon that adds a new "Tier-Scaled" option to the PvP battle level options. In a Tier-Scaled battle, each Pokemon's level is set based on it's competative tier on Pokemon Showdown. Generally, weaker Pokemon will be higher level while stronger Pokemon will be lower level. This allows for a much more diverse pool of battle-viable Pokemon
+This is an addon mod for Cobblemon that adds a new "Tier-Scaled" option to the PvP battle level options. In a Tier-Scaled battle, each Pokemon's level is set based on it's competitive tier on Pokemon Showdown. Generally, weaker Pokemon will be higher level while stronger Pokemon will be lower level. This allows for a much more diverse pool of battle-viable Pokemon
 
 ![Battle Request GUI Image](images/battle-request.jpg "Battle Request GUI Image")
 
