@@ -8,7 +8,15 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class CheckTierCommand {
 
     private static String checkTier(String name) {
-        return TierScaledBattles.getSpeciesLevel(name).toString();
+        name = name.toLowerCase();
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+        String tier = TierScaledBattles.getSpeciesTier(name);
+        String level = TierScaledBattles.getTierLevel(tier).toString();
+        String returnString = "Unknown species name: " + name;
+        if (tier != null) {
+            returnString = capitalizedName + " is " + tier.toUpperCase() + " tier and will be set to level " + level + ".";
+        }
+        return returnString;
     }
 
     public static void registerCommand() {

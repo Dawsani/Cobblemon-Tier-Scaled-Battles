@@ -25,7 +25,8 @@ public class TierScaledBattles implements ModInitializer {
 
     private static final Integer TIER_SCALED_LEVEL_RULESET_OPTION_ID = 2165;
 
-    private static Map<String, Integer> speciesLevel;
+    private static Map<String, String> speciesTier;
+    private static Map<String, Integer> tierLevel;
 
     @Override
     public void onInitialize() {
@@ -34,7 +35,8 @@ public class TierScaledBattles implements ModInitializer {
         // Proceed with mild caution.
         LOGGER.info("Loaded Tier Scaled Battles mod.");
 
-        speciesLevel = loadPokemonLevelsFromJsonResources();
+        speciesTier = loadSpeciesTierData();
+        tierLevel = loadTierLevelData();
         CheckTierCommand.registerCommand();
     }
 
@@ -43,20 +45,22 @@ public class TierScaledBattles implements ModInitializer {
     }
 
     public static Integer getSpeciesLevel(String speciesName) {
-        return speciesLevel.getOrDefault(speciesName, 1);
+        return tierLevel.getOrDefault(speciesTier.get(speciesName),1);
     }
 
-    private static Map<String, Integer> loadPokemonLevelsFromJsonResources() {
+    public static Integer getTierLevel(String tier) {
+        return tierLevel.getOrDefault(tier, 1);
+    }
+
+    public static String getSpeciesTier(String speciesName) {
+        return speciesTier.get(speciesName);
+    }
+
+    private static Map<String, Integer> loadTierLevelData() {
 
         Gson gson = new Gson();
-
-        // tierName -> level
         Map<String, Integer> tierToLevel = new HashMap<>();
 
-        // pokemonName -> natDexTier
-        Map<String, String> pokemonToTier = new HashMap<>();
-
-        // ---------- Load tier levels ----------
         try (InputStream in = TierScaledBattles.class.getClassLoader().getResourceAsStream(TIER_LEVELS_PATH)) {
             if (in == null) {
                 throw new RuntimeException("Missing resource: " + TIER_LEVELS_PATH);
@@ -77,7 +81,14 @@ public class TierScaledBattles implements ModInitializer {
             throw new RuntimeException("Failed reading tier levels JSON: " + TIER_LEVELS_PATH, e);
         }
 
-        // ---------- Load pokemon tiers ----------
+        return tierToLevel;
+    }
+
+    private static Map<String, String> loadSpeciesTierData() {
+
+        Gson gson = new Gson();
+        Map<String, String> pokemonToTier = new HashMap<>();
+
         try (InputStream in = TierScaledBattles.class.getClassLoader().getResourceAsStream(POKEMON_TIERS_PATH)) {
             if (in == null) {
                 throw new RuntimeException("Missing resource: " + POKEMON_TIERS_PATH);
@@ -104,23 +115,6 @@ public class TierScaledBattles implements ModInitializer {
             throw new RuntimeException("Failed reading pokemon tiers JSON: " + POKEMON_TIERS_PATH, e);
         }
 
-        // ---------- Join into pokemon -> level ----------
-        Map<String, Integer> pokemonToLevel = new HashMap<>();
-
-        for (Map.Entry<String, String> entry : pokemonToTier.entrySet()) {
-            String pokemon = entry.getKey();
-            String tier = entry.getValue();
-
-            Integer level = tierToLevel.get(tier);
-
-            if (level == null) {
-                // Tier not found in tier levels file — skip or default
-                continue;
-            }
-
-            pokemonToLevel.put(pokemon, level);
-        }
-
-        return pokemonToLevel;
+        return pokemonToTier;
     }
 }
