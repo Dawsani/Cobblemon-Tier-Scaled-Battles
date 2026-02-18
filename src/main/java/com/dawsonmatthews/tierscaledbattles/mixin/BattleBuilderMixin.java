@@ -2,7 +2,7 @@ package com.dawsonmatthews.tierscaledbattles.mixin;
 
 import com.cobblemon.mod.common.battles.BattleBuilder;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import com.dawsonmatthews.tierscaledbattles.CobblemonTierScaledBattles;
+import com.dawsonmatthews.tierscaledbattles.TierScaledBattles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -139,9 +139,9 @@ public abstract class BattleBuilderMixin {
                 }
             }
 
-            CobblemonTierScaledBattles.LOGGER.info("Species Name: {}", speciesName);
-            CobblemonTierScaledBattles.LOGGER.info("Form Name: {}", formName);
-            CobblemonTierScaledBattles.LOGGER.info("Held Item Name: {}", heldItemName);
+            TierScaledBattles.LOGGER.info("Species Name: {}", speciesName);
+            TierScaledBattles.LOGGER.info("Form Name: {}", formName);
+            TierScaledBattles.LOGGER.info("Held Item Name: {}", heldItemName);
 
             pokemon.setLevel(speciesLevel.getOrDefault(speciesName, 1));
         } else {

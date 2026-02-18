@@ -3,13 +3,14 @@
 	"id": "tierscaledbattles",
 	"version": "${version}",
 	"name": "Cobblemon Tier-Scaled Battles",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds a Tier-Scaled Level battle option in which each pokemon's level is set based upon their Smogon Nation Dex tier. Stronger pokemon become lower level and weaker pokemon become higher level, making more pokemon competitively viable.",
+
 	"authors": [
-		"Me!"
+		"Dawson Matthews"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Dawsani/Cobblemon-Tier-Scaled-Battles"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/tierscaledbattles/icon.png",
@@ -17,14 +18,12 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.CobblemonTierScaledBattles",
-				"adapter": "kotlin"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattles"
 			}
 		],
 		"client": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.CobblemonTierScaledBattlesClient",
-				"adapter": "kotlin"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattlesClient"
 			}
 		]
 	},
@@ -40,6 +39,7 @@
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
+		"fabric-language-kotlin": "*",
+		"cobblemon": "*"
 	}
 }
