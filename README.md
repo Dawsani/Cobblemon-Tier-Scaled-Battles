@@ -11,10 +11,10 @@ Each Pokemon's tier is based on the tier provided by Pokemon Showdown in the Nat
 | AG (Anything Goes) | 71 |
 | Uber | 73 |
 | OU (Over-Used) | 75 |
-| UU (Under-Used) | 77 |
 | UUBL (Under-Used Ban List) | 76 |
-| RU (Rarely Used) | 79 |
+| UU (Under-Used) | 77 |
 | RUBL (Rarely Used Ban List) | 76 |
+| RU (Rarely Used) | 79 |
 | NFE (Not Fully Evolved) | 84 |
 
 ## Forms
