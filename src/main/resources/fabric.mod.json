@@ -18,12 +18,14 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattles"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattles",
+				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattlesClient"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattlesClient",
+				"adapter": "kotlin"
 			}
 		]
 	},

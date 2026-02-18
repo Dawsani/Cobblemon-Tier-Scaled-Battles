@@ -23,6 +23,8 @@ public abstract class BattleBuilderMixin {
     private static final String POKEMON_TIERS_PATH = "assets/tierscaledbattles/pokemon-tiers.json";
     private static final String TIER_LEVELS_PATH = "assets/tierscaledbattles/tier-levels.json";
 
+    private static final Integer TIER_SCALED_LEVEL_RULESET_OPTION_ID = 2165;
+
     private static Map<String, Integer> speciesLevel = loadPokemonLevelsFromJsonResources();
 
     private static Map<String, Integer> loadPokemonLevelsFromJsonResources() {
@@ -112,7 +114,7 @@ public abstract class BattleBuilderMixin {
         )
     )
     private void redirectSetLevel(Pokemon pokemon, int adjustLevel) {
-        if (adjustLevel == 2165) {
+        if (adjustLevel == TIER_SCALED_LEVEL_RULESET_OPTION_ID) {
             String speciesName = pokemon.getSpecies().getName().toLowerCase();
             String formName = pokemon.getForm().getName().toLowerCase();
             String heldItemName = pokemon.getHeldItem$common().getItem().toString().toLowerCase();
