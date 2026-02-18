@@ -13,7 +13,7 @@ Each Pokemon's tier is based on the tier provided by Pokemon Showdown in the Nat
 | OU (Over-Used) | 75 |
 | UUBL (Under-Used Ban List) | 76 |
 | UU (Under-Used) | 77 |
-| RUBL (Rarely Used Ban List) | 76 |
+| RUBL (Rarely Used Ban List) | 78 |
 | RU (Rarely Used) | 79 |
 | NFE (Not Fully Evolved) | 84 |
 
