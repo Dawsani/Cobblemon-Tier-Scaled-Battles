@@ -2,6 +2,7 @@ package com.dawsonmatthews.tierscaledbattles.mixin;
 
 import com.cobblemon.mod.common.battles.BattleBuilder;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.dawsonmatthews.tierscaledbattles.CobblemonTierScaledBattles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -113,6 +114,35 @@ public abstract class BattleBuilderMixin {
     private void redirectSetLevel(Pokemon pokemon, int adjustLevel) {
         if (adjustLevel == 2165) {
             String speciesName = pokemon.getSpecies().getName().toLowerCase();
+            String formName = pokemon.getForm().getName().toLowerCase();
+            String heldItemName = pokemon.getHeldItem$common().getItem().toString().toLowerCase();
+
+            speciesName = speciesName.replace("-", "");
+
+            if (!formName.equals("normal")) {
+                speciesName = speciesName + formName;
+            }
+
+            String[] parts = heldItemName.split(":");
+            String namespace = parts[0];
+            String itemName = parts[1];
+            if ((namespace.equals("mega_showdown") || namespace.equals("zamega")) && itemName.contains("ite")) {
+                speciesName = speciesName + "mega";
+
+                char lastChar = itemName.charAt(itemName.length() -1);
+                if (lastChar == 'x') {
+                    speciesName = speciesName + "x";
+                } else if (lastChar == 'y') {
+                    speciesName = speciesName + "y";
+                } else if (lastChar == 'z') {
+                    speciesName = speciesName + "z";
+                }
+            }
+
+            CobblemonTierScaledBattles.LOGGER.info("Species Name: {}", speciesName);
+            CobblemonTierScaledBattles.LOGGER.info("Form Name: {}", formName);
+            CobblemonTierScaledBattles.LOGGER.info("Held Item Name: {}", heldItemName);
+
             pokemon.setLevel(speciesLevel.getOrDefault(speciesName, 1));
         } else {
             pokemon.setLevel(adjustLevel);

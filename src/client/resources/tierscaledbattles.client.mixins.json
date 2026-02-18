@@ -3,7 +3,7 @@
 	"package": "com.dawsonmatthews.tierscaledbattles.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
+		"BattleConfigureGUIMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
