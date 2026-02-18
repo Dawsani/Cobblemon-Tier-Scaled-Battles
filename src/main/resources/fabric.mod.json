@@ -3,7 +3,7 @@
 	"id": "tierscaledbattles",
 	"version": "${version}",
 	"name": "Cobblemon Tier-Scaled Battles",
-	"description": "Adds a Tier-Scaled Level battle option in which each pokemon's level is set based upon their Smogon Nation Dex tier. Stronger pokemon become lower level and weaker pokemon become higher level, making more pokemon competitively viable.",
+	"description": "Adds a Tier-Scaled level battle option in which each pokemon's level is set based upon their Smogon Nation Dex tier. Stronger pokemon become lower level and weaker pokemon become higher level, making more pokemon competitively viable.",
 
 	"authors": [
 		"Dawson Matthews"
@@ -18,14 +18,12 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattles",
-				"adapter": "kotlin"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattles"
 			}
 		],
 		"client": [
 			{
-				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattlesClient",
-				"adapter": "kotlin"
+				"value": "com.dawsonmatthews.tierscaledbattles.TierScaledBattlesClient"
 			}
 		]
 	},
