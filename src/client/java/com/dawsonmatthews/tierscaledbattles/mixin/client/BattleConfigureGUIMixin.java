@@ -1,6 +1,7 @@
 package com.dawsonmatthews.tierscaledbattles.mixin.client;
 
 import com.cobblemon.mod.common.client.gui.interact.battleRequest.BattleConfigureGUI;
+import com.dawsonmatthews.tierscaledbattles.TierScaledBattles;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,9 +20,6 @@ import java.util.List;
 @Mixin(BattleConfigureGUI.class)
 public abstract class BattleConfigureGUIMixin {
 
-    @Unique
-    private static final Integer TIER_SCALED_LEVEL_RULESET_OPTION_ID = 2165;
-
     @Final
     @Shadow(remap = false)
     private static List<Integer> levelRulesetOption;
@@ -31,10 +29,10 @@ public abstract class BattleConfigureGUIMixin {
 
     @Inject(method = "init", at = @At("RETURN"), remap = false)
     private void addTierScaledLevelRulesetOption(CallbackInfo ci) {
-        if (levelRulesetOption.contains(TIER_SCALED_LEVEL_RULESET_OPTION_ID)) {
+        if (levelRulesetOption.contains(TierScaledBattles.getTierScaledLevelRulesetOptionID())) {
             return;
         }
-        levelRulesetOption.add(TIER_SCALED_LEVEL_RULESET_OPTION_ID);
+        levelRulesetOption.add(TierScaledBattles.getTierScaledLevelRulesetOptionID());
     }
 
 
@@ -54,7 +52,7 @@ public abstract class BattleConfigureGUIMixin {
                 adjustLevel = (Integer) args[0];
             }
 
-            if (adjustLevel == TIER_SCALED_LEVEL_RULESET_OPTION_ID) {
+            if (adjustLevel == TierScaledBattles.getTierScaledLevelRulesetOptionID()) {
                 return Component.translatable("challenge.rule.tier_scaled");
             }
         }
