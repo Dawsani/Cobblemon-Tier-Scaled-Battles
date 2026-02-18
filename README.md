@@ -1,6 +1,8 @@
 # Cobblemon: Tier-Scaled Battles
 This is an addon mod for Cobblemon that adds a new "Tier-Scaled" option to the PvP battle level options. In a Tier-Scaled battle, each Pokemon's level is set based on it's competative tier on Pokemon Showdown. Generally, weaker Pokemon will be higher level while stronger Pokemon will be lower level. This allows for a much more diverse pool of battle-viable Pokemon
 
+![Battle Request GUI Image](images/battle-request.jpg "Battle Request GUI Image")
+
 # Tiering Information
 Each Pokemon's tier is based on the tier provided by Pokemon Showdown in the National Dex format. Each Pokemon's level in a tier-scaled battle directly corresponds to their tier. Below is a list of each tier and it's corresponding level. The level assigned to each pokemon in a tier is based on Pokemon Showdown's assignment as well. 
 
@@ -23,6 +25,18 @@ Some species of Pokemon have different tiers for different forms. For example, n
 
 > [!NOTE]
 > All Mega Evolution forms from Pokemon Legends: Z-A are tiered at OU for now.
+
+# Commands
+There is currently only one command included with this mod: `/checktier <pokemon name>`
+
+This command shows you the tier and adjusted level of the specified Pokemon. If you want to check a specific form of a Pokemon, generally you can add the form to the end of the Pokemon's name. For example to check Lucario and it's various forms you would use the following commands:
+
+| Lucario Form | Command                   |
+| ------------ |---------------------------|
+| Normal | `/checktier lucario`      |
+| Mega   | `/checktier lucariomega`  |
+| Mega Z | `/checktier lucariomegaz` |
+
 
 # Bugs
 Cobblemon and Pokemon alike have over 1,000 different species, many with different forms that sometimes have different tiers. This mod has not been tested with each and every one of those species. It is not unlikely that you may encounter a Pokemon being set to level 1 in a tier-scaled battle. This is becuase level 1 is the default level if no tier is found for the species or if no level has been assigned to it's tier.
