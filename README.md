@@ -41,7 +41,7 @@ This command shows you the tier and adjusted level of the specified Pokemon. If 
 # Bugs
 Cobblemon and Pokemon alike have over 1,000 different species, many with different forms that sometimes have different tiers. This mod has not been tested with each and every one of those species. It is not unlikely that you may encounter a Pokemon being set to level 1 in a tier-scaled battle. This is becuase level 1 is the default level if no tier is found for the species or if no level has been assigned to it's tier.
 
-Please report any bugs you find to me over GitHub, Modrinth, CurseForge or email at [dawson@dawsonmatthews.com](mailto:dawson@dawsonmatthews.com).
+Please report any bugs you find to me over GitHub, Modrinth, CurseForge or email at [dawsani@proton.me](mailto:dawsani@proton.me).
 
 # Compatability
 For the Mega Forms, this mod was only made in mind with the Mega Showdown mod and Navas ZA Mega. If you want this mod to work with other Mega evolution mods let me know and I'll get back to you.
