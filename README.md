@@ -47,7 +47,7 @@ Please report any bugs you find to me over GitHub, Modrinth, CurseForge or email
 For the Mega Forms, this mod was only made in mind with the Mega Showdown mod and Navas ZA Mega. If you want this mod to work with other Mega evolution mods let me know and I'll get back to you.
 
 # Donate
-If you enjoy this mod and want to support me, consider [buying me a coffee](buymeacoffee.com/dawsonmatthews)!
+If you enjoy this mod and want to support me, consider [buying me a coffee](https://buymeacoffee.com/dawsonmatthews)!
 
 # All Species Tiers and Levels
 | Species | Tier | Level |
